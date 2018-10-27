@@ -1,0 +1,15 @@
+ <head>
+        <title> React Components</title>
+        <meta charset = "utf-8">
+        <script src = "../reactFiles/react.js"></script>
+        <script src = "../reactFiles/react.min.js"></script>
+        <script src = "../reactFiles/react-dom-server.js"></script>
+        <script src = "../reactFiles/react-dom-server.min.js"></script>
+        <script src = "../reactFiles/react-dom.js"></script>
+        <script src = "../reactFiles/react-dom.min.js"></script>
+        <script src = "../reactFiles/react-with-addons.js"></script>
+        <script src = "../reactFiles/react-with-addons.min.js"></script>
+        <script src = "../reactFiles/babel.js"></script>
+        <script src = "../reactFiles/browser.min.js"></script>
+        <!--<script src = "index.jsx" type = "text/babel"></script> -->
+    </head>
