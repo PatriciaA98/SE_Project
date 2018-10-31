@@ -1,3 +1,24 @@
 #main {
   background-color: red;
 }
+
+#root
+{
+  /*background-color:black;*/
+}
+
+#FORM{
+
+	/*border:solid red 2px;*/
+	background-color: #6495ED;
+	padding-left:5px;
+	font-size:150%;
+  font-style:oblique;
+  color:#FAEBD7;
+
+}
+
+#title
+{
+  text-align:center;
+}
