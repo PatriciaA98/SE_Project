@@ -1,10 +1,27 @@
-#main {
+/*#main {
   background-color: red;
+}*/
+
+#parent
+{
+  /*background-color:black;*/
+  margin:auto;
+	width:70%;
+	background-color:Gainsboro; 
+  border-right: 2px solid black;
+  border-left: 2px solid black;
 }
 
 #root
 {
-  /*background-color:black;*/
+  background-color:LightCyan;
+  padding-left: 1%;
+}
+
+#footer
+{
+  background-color:LightCyan;
+  
 }
 
 #FORM{
@@ -15,10 +32,25 @@
 	font-size:150%;
   font-style:oblique;
   color:#FAEBD7;
+}
 
+table, th, td {
+  border: 2px solid black;
+  width: 50%;
+  height: 75%;
+  text-align: center;
 }
 
 #title
 {
   text-align:center;
 }
+
+#table
+{
+  /*border:2px solid red;*/
+  padding-left:20%;
+  padding-top: 5%;
+  padding-bottom:5%;
+}
+

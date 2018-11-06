@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang = "en-us">
+<head>
+  <title> Subject-Verb agreement</title>
+  <meta charset = "utf-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale = 1">
+  <link rel = "stylesheet" href = "bootstrap-4.1.3-dist/css/bootstrap.min.css" type = "text/css">
+  <link rel = "stylesheet" href = "style.css" type = "text/css">
+	 <script src = "reactFiles/react.js"> </script>
+     <script src = "reactFiles/react-dom.js"> </script>
+     <script src = "reactFiles/babel.js"> </script>
+</head>
+
+<body id = "parent">
+
+     <!-- Navigation bar -->
+     <nav class = "navbar navbar-expand-md bg-danger navbar-dark">
+
+      <!-- Navigation items -->
+      <ul class = "navbar-nav nav-justified w-100">
+        <!-- Home page link -->
+        <li class = "nav-item">
+          <a class = "nav-link" href = "index.html"> Home </a>
+        </li>
+
+        <!-- Drop down menu for Lessons -->
+        <li class = "nav-item dropdown">
+          <a class = "nav-link dropdown-toggle" href = "#" id = "lesson_drop_list" data-toggle = "dropdown">
+            Lessons
+          </a>
+
+          <div class = "dropdown-menu" ariallabelledby = "lesson_drop_list">
+            <a class = "dropdown-item" href = "pronoun.html"> Pronouns </a> <!--pronoun-->
+            <div class = "dropdown-divider"></div>
+
+            <a class = "dropdown-item" href = "subjectVerb.html">Subject-Verb agreement </a>
+            <div class = "dropdown-divider"></div>
+
+            <a class = "dropdown-item" href = "verbTense.html">Verb Tense </a>
+            <div class = "dropdown-divider"></div>
+
+            <a class = "dropdown-item" href = "adj_adv.html"> Adjectives / Adverbs </a>
+            <div class = "dropdown-divider"></div>
+
+            <a class = "dropdown-item" href = "noun.html"> Nouns </a>
+            <div class = "dropdown-divider"></div>
+          </div> <!--drop down menu -->
+
+        </li><!--end dropdown list Lessons -->
+
+        <!-- Drop down menu for the Quizzes -->
+        <li class = "nav-item dropdown">
+          <a class = "nav-link dropdown-toggle" href = "#" id = "quiz_drop_list" data-toggle = "dropdown">
+            Quizzes
+          </a>
+
+          <div class = "dropdown-menu" ariallabelledby = "quiz_drop_list">
+             <a class = "dropdown-item" href ="pronounQuiz.html"> Pronoun </a>
+             <div class = "dropdown-divider"></div>
+
+             <a class = "dropdown-item" href ="#"> Quiz 2 </a>
+             <div class = "dropdown-divider"></div>
+
+             <a class = "dropdown-item" href ="#"> Quiz 3 </a>
+             <div class = "dropdown-divider"></div>
+          </div><!--drop down menu -->
+        </li> <!--end dropdown list Quizzes -->
+
+        <li class = "nav-item">
+          <a class = "nav-link" href = "about.html"> About us </a>
+        </li>
+
+      </ul> <!-- end navigation items -->
+
+    </nav> <!--navbar-->
+   
+    <div id = "root"> </div>
+
+     <div id = "footer">
+      <a href = "sVerbQuiz.html"> <button type = "button" class = "btn-success btn-block">Click here to try the quiz</button></a>
+    </div>
+    
+   
+
+
+<!-- Scripts below -->
+<script src = "bootstrap-4.1.3-dist/js/bootstrap.min.jquery.js" type = "text/javascript"> </script>
+<script src = "bootstrap-4.1.3-dist/js/popper.js"  type = "text/javascript"> </script>
+<script src = "bootstrap-4.1.3-dist/js/bootstrap.min.js" type = "text/javascript"> </script>
+
+<script type = "text/babel">
+
+  //create component
+  class Introduction extends React.Component 
+  {
+
+     //render method
+     render()
+     {
+       return(
+
+         <div>
+            <div id = "title"> 
+              <h2> Topic: {this.props.title} </h2>
+            </div>
+
+            <div id = " ">
+              <h2> <u> Definition: </u> </h2> 
+              <h6> {this.props.definition} </h6>
+              <br />
+            </div>
+            <hr />
+         </div>
+       );
+     }
+
+  }//Introduction
+
+  class Data1 extends React.Component 
+  {
+    render()
+    {
+      return(
+          <div>
+             <h3> {this.props.dataTitle} </h3> 
+             <h6> { this.props.description} <br /> <br /> <br />
+                &nbsp;&nbsp;&nbsp;&nbsp; Example: {this.props.example} </h6> 
+                <hr />
+          </div>
+      );
+    }
+
+  }//Data1
+
+  class Data2 extends React.Component 
+  { 
+     render()
+     {
+       return(
+
+         <div>
+            <h3> {this.props.dataTitle} </h3>
+             <h6> { this.props.description} <br /> <br />
+              &nbsp;&nbsp;&nbsp;&nbsp; Example: {this.props.example} </h6> <br /> 
+              
+
+            <h6> The plural subject <i>students</i> is nearer to the verb, therefore the verb <i>are</i> is plural.<br /> <br />
+                &nbsp;&nbsp;&nbsp;&nbsp; Example: {this.props.example2}
+            </h6>
+
+            <br />
+
+            <h6> The singular subject <i>teacher</i> is nearer to the verb; therefore, the verb <i>is</i> is singular. </h6>
+            <hr />
+         </div>
+       );
+     }
+
+  }//Data 2
+
+  class Data3 extends React.Component 
+  {
+    render()
+    {
+      return(
+          <div>
+             <ul>
+               <li> <h6> {this.props.description} </h6> </li>
+               &nbsp;&nbsp;&nbsp;&nbsp;<h6> Example: {this.props.example} </h6>
+
+             </ul>
+              <hr />
+          </div>
+
+      );
+    }
+  }
+
+  class App extends React.Component 
+  {
+      render()
+      {
+        return(
+
+           <div>
+              <Introduction
+                title = "Subject-Verb Agreement"
+                definition = "This is when the subject and verb in a sentence matches correctly. 
+		                          They must agree with each other in number (singular or plural). 
+						                  Therefore, if a subject is singular, its verb must also be singular. 
+						                  Likewise, if a subject is plural, its verb must also be plural"
+              />
+
+              <Data1 dataTitle ="Rule 1:" 
+                  description = "A phrase or clause between the subject and verb does not change the number of the subject."
+                  example = " A case of books sit on the shelf."
+              />
+              <h6> The subject <i>case</i> is singular and the verb <i>sit</i> agrees with case <u>not</u> books. </h6>,
+
+              <Data1 dataTitle = "Rule 2:"
+                    description = "Compound subjects joined by ‘and’ are always plural."
+                    example = "Anna and Rose are riding."
+                />
+                <h6> The compound subjects <i>Anna</i> and <i>Rose</i> are plural, and the <i>verb</i> are is also plural.</h6>
+                  <p> </p>
+              <Data2 dataTitle = "Rule 3:"
+                   description = "With compound subjects joined by ‘nor/or’ the verb agrees with the subject nearer to it."
+                   example =  "Neither the teacher nor the students are in the classroom."
+                   example2 = " Neither the students nor the teacher is in the classroom."
+              />
+                  <p> </p>
+              <h3> RULE 4: </h3>
+              <h6> Plural form subjects</h6>
+              <Data3 description = "Plural form subjects with singular meanings take singular verbs."
+                      example = " Physics is my favorite subject." />
+              <Data3 description = "Plural form subjects with plural meanings take plural verbs."
+                      example = "The scissors are on the table."
+              />
+              <p> </p>
+                   
+           </div>
+        );
+      }
+  }//App
+
+  ReactDOM.render(<App />, document.getElementById("root"));
+
+</script>
+
+</body>
+      
+      </html>
