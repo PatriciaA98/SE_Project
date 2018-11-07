@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en-us">
   <head>
-    <title> Pronoun Quiz</title>
+    <title> Subject Ver Agreement Quiz</title>
     <meta charset = "utf-8">
     <meta name = "viewport" content = "width=device-width, initial-scale = 1">
     <link rel = "stylesheet" href = "bootstrap-4.1.3-dist/css/bootstrap.min.css" type = "text/css">
@@ -35,7 +35,7 @@
               <a class = "dropdown-item" href = "subjectVerb.html"> Lesson 2 - Subject-Verb Agreement </a>
               <div class = "dropdown-divider"></div>
 			  
-			  <a class = "dropdown-item" href = "verbTense.html"> Lesson 3 - Verb Tense </a>
+			  <a class = "dropdown-item" href = "verbTense.html"> Lesson 3 - Verb Tenses </a>
               <div class = "dropdown-divider"></div>
               </div> <!--drop down menu -->
 
@@ -137,7 +137,7 @@ class Controller extends React.Component
             event.preventDefault();
            
             //validate submission
-            if(this.state.userChoice == "her")
+            if(this.state.userChoice == "is")
             {
                 this.setState({message1: "Correct Choice"});
             }
@@ -153,7 +153,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "He")
+            if(this.state.userChoice == "are")
             {
                 this.setState({message2: "Correct Choice"});
             }
@@ -169,7 +169,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "It")
+            if(this.state.userChoice == "is")
             {
                 this.setState({message3: "Correct Choice"});
             }
@@ -185,7 +185,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "them")
+            if(this.state.userChoice == "was enjoying")
             {
                 this.setState({message4: "Correct Choice"});
             }
@@ -201,7 +201,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "It")
+            if(this.state.userChoice == "were")
             {
                 this.setState({message5: "Correct Choice"});
             }
@@ -217,7 +217,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "he")
+            if(this.state.userChoice == "does not")
             {
                 this.setState({message6: "Correct Choice"});
             }
@@ -296,71 +296,59 @@ class Controller extends React.Component
         {
             return(
               <div>
-                <Title instruction = " In each Sentence, replace the capitalised noun or noun phrase with the BEST pronoun." />,
+                <Title instruction = " Choose the vern which agrees with the subject of each sentence." />,
 
                 <Question1 c = {this.state.checked} m = {this.state.message1} sub = {this.handleSubmit1} change = {this.handleOnChange1} t = {this.handleReset} 
                     number = "1"
-                    question = "The teacher punished PAULA because she was shouting in class."
-                    choice1 ="a. him"
-                    choice2 ="b. them"
-                    choice3 ="c. her"
-                    choice4 ="d. we"
-                    solution ="her"
+                    question = "The price of these jeans ____ unreasonable."
+                    choice1 ="a. are"
+                    choice2 ="b. is"
+                    solution ="is"
                     submit = "Submit"
                     reset = "Reset"
                />,
                <Question2 c = {this.state.checked} m = {this.state.message2} sub = {this.handleSubmit2} change = {this.handleOnChange2} t = {this.handleReset} 
                 number = "2"
-                question = "KYLE lost his bag in the play park yesterday."
-                choice1 = "a. Them"
-                choice2= "b. You"
-                choice3 = "c. Me"
-                choice4 = "d. He"
-                solution = "He"
+                question = "The books borrowed from the library ___ on my desk."
+                choice1 = "a. is"
+                choice2= "b. are"
+                solution = "are"
                 submit = "Submit"
                 reset = "Reset"
                />,
                <Question3 c = {this.state.checked} m = {this.state.message3} sub = {this.handleSubmit3} change = {this.handleOnChange3} t = {this.handleReset} 
                 number = "3"
-                question = "THE SUN is shining brightly today"
-                choice1 = "a. It"
-                choice2= "b. You"
-                choice3 = "c. He"
-                choice4 = "d. Our"
-                solution = "It"
+                question = "Neither the pens nor paper___ on the desk."
+                choice1 = "a. is"
+                choice2= "b. are"
+                solution = "is"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question4 c = {this.state.checked} m = {this.state.message4} sub = {this.handleSubmit4} change = {this.handleOnChange4} t = {this.handleReset} 
                 number = "4"
-                question = "Micah told HIS PARENTS that he is hungry."
-                choice1 = "a. them"
-                choice2= "b. us"
-                choice3 = "c. her"
-                choice4 = "d. I"
-                solution = "them"
+                question = " Everybody at the party ___ the food"
+                choice1 = "a. was enjoying"
+                choice2= "b. were enjoying"
+                solution = "was enjoying"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question5 c = {this.state.checked} m = {this.state.message5} sub = {this.handleSubmit5} change = {this.handleOnChange5} t = {this.handleReset} 
                 number = "5"
-                question = "MY BAG was under the table."
-                choice1 = "a. It"
-                choice2= "b. You"
-                choice3 = "c. He"
-                choice4 = "d. Our"
-                solution = "It"
+                question = "The books and the magazine ____ placed on the table."
+                choice1 = "a. were"
+                choice2= "b. was"
+                solution = "were"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question6 c = {this.state.checked} m = {this.state.message6} sub = {this.handleSubmit6} change = {this.handleOnChange6} t = {this.handleReset} 
                 number = "6"
-                question = "It is SHAQUILLE who will be the next team captain."
-                choice1 = "a. he"
-                choice2= "b. him"
-                choice3 = "c. they"
-                choice4 = "d. you"
-                solution = "a. he"
+                question = "Shayla wants to come to my party, but she ___ know where I live."
+                choice1 = "a. do not"
+                choice2= "b. does not"
+                solution = "does not"
                 submit = "Submit"
                 reset = "Reset"
                 />
@@ -369,6 +357,7 @@ class Controller extends React.Component
         }//render
 
 }//controller
+
 
 class Question1 extends React.Component 
 { 
@@ -389,19 +378,11 @@ class Question1 extends React.Component
                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
                 &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
                 </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
+                 &nbsp;<label className = "form-check-label">{this.props.choice2} </label> 
                  &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked= {this.props.c} onChange = {this.props.change}/>
                 </div>
                 <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "   defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
                 
                    <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
                       &nbsp; &nbsp; 
@@ -444,15 +425,7 @@ class Question2 extends React.Component
                 </div>
                  <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution}   defaultChecked = {this.props.c} onChange = {this.props.change}/>
+                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution} defaultChecked= {this.props.c} onChange = {this.props.change}/><br/>
                 </div>
                   <div className = "form-group form-check">
                 
@@ -497,14 +470,6 @@ class Question3 extends React.Component
                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
                  &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
                 </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
                   <div className = "form-group form-check">
                 
                    <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
@@ -542,19 +507,11 @@ class Question4 extends React.Component
                 <label> {this.props.number}. {this.props.question} </label> <br/>
                 </div>
                 <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
+                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label> 
+                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} />
                 </div>
                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
+                &nbsp;<label className = "form-check-label">{this.props.choice2} </label>
                  &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
                 </div>
                   <div className = "form-group form-check">
@@ -593,19 +550,11 @@ class Question5 extends React.Component
                 <label> {this.props.number}. {this.props.question} </label> <br/>
                 </div>
                 <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
+                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label> 
+                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} />
                 </div>
                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
+                &nbsp;<label className = "form-check-label">{this.props.choice2} </label>
                  &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
                 </div>
                   <div className = "form-group form-check">
@@ -643,21 +592,13 @@ class Question6 extends React.Component
                 <div className = "form group ">
                 <label> {this.props.number}. {this.props.question} </label> <br/>
                 </div>
-                <div className = "form-group form-check">
+                 <div className = "form-group form-check">
                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
+                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
                 </div>
                  <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
+                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
                 </div>
                   <div className = "form-group form-check">
                 
@@ -675,7 +616,7 @@ class Question6 extends React.Component
             </form>
             </div>
             </div>
-           
+          
            
            );
     }

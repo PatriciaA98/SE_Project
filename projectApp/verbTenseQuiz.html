@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en-us">
   <head>
-    <title> Pronoun Quiz</title>
+    <title> Verb Tense Quiz</title>
     <meta charset = "utf-8">
     <meta name = "viewport" content = "width=device-width, initial-scale = 1">
     <link rel = "stylesheet" href = "bootstrap-4.1.3-dist/css/bootstrap.min.css" type = "text/css">
@@ -137,7 +137,7 @@ class Controller extends React.Component
             event.preventDefault();
            
             //validate submission
-            if(this.state.userChoice == "her")
+            if(this.state.userChoice == "was ice skating")
             {
                 this.setState({message1: "Correct Choice"});
             }
@@ -153,7 +153,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "He")
+            if(this.state.userChoice == "has been teaching")
             {
                 this.setState({message2: "Correct Choice"});
             }
@@ -169,7 +169,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "It")
+            if(this.state.userChoice == "went")
             {
                 this.setState({message3: "Correct Choice"});
             }
@@ -185,7 +185,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "them")
+            if(this.state.userChoice == "go")
             {
                 this.setState({message4: "Correct Choice"});
             }
@@ -201,7 +201,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "It")
+            if(this.state.userChoice == "cheered")
             {
                 this.setState({message5: "Correct Choice"});
             }
@@ -217,7 +217,7 @@ class Controller extends React.Component
             //prevent default action on form
             event.preventDefault();
             //validate submission
-            if(this.state.userChoice == "he")
+            if(this.state.userChoice == "had already gone")
             {
                 this.setState({message6: "Correct Choice"});
             }
@@ -296,71 +296,71 @@ class Controller extends React.Component
         {
             return(
               <div>
-                <Title instruction = " In each Sentence, replace the capitalised noun or noun phrase with the BEST pronoun." />,
+                <Title instruction = " For each sentence, fill in the blanks with the correct verb tense." />,
 
                 <Question1 c = {this.state.checked} m = {this.state.message1} sub = {this.handleSubmit1} change = {this.handleOnChange1} t = {this.handleReset} 
                     number = "1"
-                    question = "The teacher punished PAULA because she was shouting in class."
-                    choice1 ="a. him"
-                    choice2 ="b. them"
-                    choice3 ="c. her"
-                    choice4 ="d. we"
-                    solution ="her"
+                    question = "Henry hurt his head while he _________."
+                    choice1 ="a. had ice skated"
+                    choice2 ="b. ice skated"
+                    choice3 ="c. was ice skating"
+                    choice4 ="d. ice skates"
+                    solution ="was ice skating"
                     submit = "Submit"
                     reset = "Reset"
                />,
                <Question2 c = {this.state.checked} m = {this.state.message2} sub = {this.handleSubmit2} change = {this.handleOnChange2} t = {this.handleReset} 
                 number = "2"
-                question = "KYLE lost his bag in the play park yesterday."
-                choice1 = "a. Them"
-                choice2= "b. You"
-                choice3 = "c. Me"
-                choice4 = "d. He"
-                solution = "He"
+                question = "Mrs. Browne __________ at St. Stephens High School since 1998."
+                choice1 = "a. will teach"
+                choice2= "b. teaches"
+                choice3 = "c. has been teaching"
+                choice4 = "d. is teaching"
+                solution = "has been teaching"
                 submit = "Submit"
                 reset = "Reset"
                />,
                <Question3 c = {this.state.checked} m = {this.state.message3} sub = {this.handleSubmit3} change = {this.handleOnChange3} t = {this.handleReset} 
                 number = "3"
-                question = "THE SUN is shining brightly today"
-                choice1 = "a. It"
-                choice2= "b. You"
-                choice3 = "c. He"
-                choice4 = "d. Our"
-                solution = "It"
+                question = "The last time my parents _________ to California, they stayed there for three weeks."
+                choice1 = "a. went"
+                choice2= "b. have gone"
+                choice3 = "c. was going"
+                choice4 = "d. go"
+                solution = "went"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question4 c = {this.state.checked} m = {this.state.message4} sub = {this.handleSubmit4} change = {this.handleOnChange4} t = {this.handleReset} 
                 number = "4"
-                question = "Micah told HIS PARENTS that he is hungry."
-                choice1 = "a. them"
-                choice2= "b. us"
-                choice3 = "c. her"
-                choice4 = "d. I"
-                solution = "them"
+                question = " My Parents ________ to California two times every year."
+                choice1 = "a. goes"
+                choice2= "b. go"
+                choice3 = "c. has been"
+                choice4 = "d. went"
+                solution = "go"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question5 c = {this.state.checked} m = {this.state.message5} sub = {this.handleSubmit5} change = {this.handleOnChange5} t = {this.handleReset} 
                 number = "5"
-                question = "MY BAG was under the table."
-                choice1 = "a. It"
-                choice2= "b. You"
-                choice3 = "c. He"
-                choice4 = "d. Our"
-                solution = "It"
+                question = "The Lakers’ fans ________ when their point guard stole the ball from the Raptors and scored."
+                choice1 = "a. cheered"
+                choice2= "b. cheer"
+                choice3 = "c. will cheer"
+                choice4 = "d. have cheered"
+                solution = "cheered"
                 submit = "Submit"
                 reset = "Reset"
                 />,
                 <Question6 c = {this.state.checked} m = {this.state.message6} sub = {this.handleSubmit6} change = {this.handleOnChange6} t = {this.handleReset} 
                 number = "6"
-                question = "It is SHAQUILLE who will be the next team captain."
-                choice1 = "a. he"
-                choice2= "b. him"
-                choice3 = "c. they"
-                choice4 = "d. you"
-                solution = "a. he"
+                question = "Before Shane arrive, Jane ______ home."
+                choice1 = "a. has already gone"
+                choice2= "b. went"
+                choice3 = "c. had already gone"
+                choice4 = "d. is already going"
+                solution = "had already gone"
                 submit = "Submit"
                 reset = "Reset"
                 />
@@ -369,6 +369,7 @@ class Controller extends React.Component
         }//render
 
 }//controller
+
 
 class Question1 extends React.Component 
 { 
@@ -448,11 +449,11 @@ class Question2 extends React.Component
                 </div>
                 <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
+                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked= {this.props.c} onChange = {this.props.change}/>
                 </div>
                 <div className = "form-group form-check">
                 &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution}   defaultChecked = {this.props.c} onChange = {this.props.change}/>
+                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/>
                 </div>
                   <div className = "form-group form-check">
                 
@@ -543,11 +544,11 @@ class Question4 extends React.Component
                 </div>
                 <div className = "form-group form-check">
                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
+                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/><br/>
                 </div>
                  <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
+                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
                 </div>
                 <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
@@ -645,7 +646,7 @@ class Question6 extends React.Component
                 </div>
                 <div className = "form-group form-check">
                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
+                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
                 </div>
                  <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
@@ -653,7 +654,7 @@ class Question6 extends React.Component
                 </div>
                 <div className = "form-group form-check">
                  &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
+                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} />
                 </div>
                 <div className = "form-group form-check">
                 &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
