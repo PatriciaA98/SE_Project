@@ -8,68 +8,64 @@
   </head>
 
   <body>
-       <!--top of webpage. Company information is placed here  -->
-        <div class = "jumbotron jumbotron-fluid" style = "margin-bottom:0px;">
-          <div class = "container">
-            <h1> Place Mission Statement Here</h1>
-            <img src = "education1.jpg"  class = "rounded "alt = "company logo" style = "height: 500px; width: 700px" >
-          </div>
-        </div> <!-- end jumbotron jumbotron-fluid -->
 
-         <!-- Navigation bar -->
-         <nav class = "navbar navbar-expand-md bg-dark navbar-dark">
+     <!-- Navigation bar -->
+     <nav class = "navbar navbar-expand-md bg-danger navbar-dark">
 
-          <!-- Navigation items -->
-          <ul class = "navbar-nav nav-justified w-100">
-            <!-- Home page link -->
-            <li class = "nav-item">
-              <a class = "nav-link" href = "index.html"> Home </a>
-            </li>
+        <!-- Navigation items -->
+        <ul class = "navbar-nav nav-justified w-100">
+          <!-- Home page link -->
+          <li class = "nav-item">
+            <a class = "nav-link" href = "index.html"> Home </a>
+          </li>
+  
+          <!-- Drop down menu for Lessons -->
+          <li class = "nav-item dropdown">
+            <a class = "nav-link dropdown-toggle" href = "#" id = "lesson_drop_list" data-toggle = "dropdown">
+              Lessons
+            </a>
+  
+            <div class = "dropdown-menu" ariallabelledby = "lesson_drop_list">
+              <a class = "dropdown-item" href = "pronoun.html"> Pronouns </a> <!--pronoun-->
+              <div class = "dropdown-divider"></div>
+  
+              <a class = "dropdown-item" href = "subjectVerb.html">Subject-Verb agreement </a>
+              <div class = "dropdown-divider"></div>
+  
+              <a class = "dropdown-item" href = "verbTense.html"> Verb Tense </a>
+              
 
-            <!-- Drop down menu for Lessons -->
-            <li class = "nav-item dropdown">
-              <a class = "nav-link dropdown-toggle" href = "#" id = "lesson_drop_list" data-toggle = "dropdown">
-                Lessons
-              </a>
-
-              <div class = "dropdown-menu" ariallabelledby = "lesson_drop_list">
-                <a class = "dropdown-item" href = "pronoun.html"> Lesson 1 - Pronouns </a>
-				<div class = "dropdown-divider"></div>
-
-				<a class = "dropdown-item" href = "subjectVerb.html"> Lesson 2 - Subject-Verb Agreement </a>
-				<div class = "dropdown-divider"></div>
-			  
-				<a class = "dropdown-item" href = "verbTense.html"> Lesson 3 - Verb Tense </a>
-				<div class = "dropdown-divider"></div>
-              </div> <!--drop down menu -->
-
-            </li><!--end dropdown list Lessons -->
-
-            <!-- Drop down menu for the Quizzes -->
-            <li class = "nav-item dropdown">
-              <a class = "nav-link dropdown-toggle" href = "#" id = "quiz_drop_list" data-toggle = "dropdown">
-                Quizzes
-              </a>
-
-              <div class = "dropdown-menu" ariallabelledby = "quiz_drop_list">
-                 <a class = "dropdown-item" href ="pronounQuiz.html"> Quiz 1 -Pronouns </a>
-                 <div class = "dropdown-divider"></div>
-
-                 <a class = "dropdown-item" href ="subjectVerbQuiz.html"> Quiz 2 - Subject-Verb Agreement</a>
-                 <div class = "dropdown-divider"></div>
-
-                 <a class = "dropdown-item" href ="verbTenseQuiz.html"> Quiz 3 - Verb Tense</a>
-                 <div class = "dropdown-divider"></div>
-              </div><!--drop down menu -->
-            </li> <!--end dropdown list Quizzes -->
-
-            <li class = "nav-item">
-              <a class = "nav-link" href = "about.html"> About us </a>
-            </li>
-
-          </ul> <!-- end navigation items -->
-
-        </nav> <!--navbar-->
+            </div> <!--drop down menu -->
+  
+          </li><!--end dropdown list Lessons -->
+  
+          <!-- Drop down menu for the Quizzes -->
+          <li class = "nav-item dropdown">
+            <a class = "nav-link dropdown-toggle" href = "#" id = "quiz_drop_list" data-toggle = "dropdown">
+              Quizzes
+            </a>
+  
+            <div class = "dropdown-menu" ariallabelledby = "quiz_drop_list">
+               <a class = "dropdown-item" href ="pronounQuiz.html"> Pronoun </a>
+               <div class = "dropdown-divider"></div>
+  
+               <a class = "dropdown-item" href ="subjectVerbQuiz.html"> Subject-Verb </a>
+               <div class = "dropdown-divider"></div>
+  
+               <a class = "dropdown-item" href ="verbTenseQuiz.html"> Verb-Tenses </a>
+               <div class = "dropdown-divider"></div>
+            </div><!--drop down menu -->
+          </li> <!--end dropdown list Quizzes -->
+  
+          <li class = "nav-item">
+            <a class = "nav-link" href = "about.html"> About us </a>
+          </li>
+  
+        </ul> <!-- end navigation items -->
+  
+      </nav> <!--navbar-->
+     
+        
 
         <div id = "main">
            Content comes here

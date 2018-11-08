@@ -13,58 +13,60 @@
 
   <body >
          <!-- Navigation bar -->
-         <nav class = "navbar navbar-expand-md bg-info navbar-dark">
+     <nav class = "navbar navbar-expand-md bg-danger navbar-dark">
 
-          <!-- Navigation items -->
-          <ul class = "navbar-nav nav-justified w-100">
-            <!-- Home page link -->
-            <li class = "nav-item">
-              <a class = "nav-link" href = "index.html"> Home </a>
-            </li>
-
-            <!-- Drop down menu for Lessons -->
-            <li class = "nav-item dropdown">
-              <a class = "nav-link dropdown-toggle" href = "#" id = "lesson_drop_list" data-toggle = "dropdown">
-                Lessons
-              </a>
-
-              <div class = "dropdown-menu" ariallabelledby = "lesson_drop_list">
-                <a class = "dropdown-item" href = "pronoun.html "> Lesson 1 - Pronouns </a>
+        <!-- Navigation items -->
+        <ul class = "navbar-nav nav-justified w-100">
+          <!-- Home page link -->
+          <li class = "nav-item">
+            <a class = "nav-link" href = "index.html"> Home </a>
+          </li>
+  
+          <!-- Drop down menu for Lessons -->
+          <li class = "nav-item dropdown">
+            <a class = "nav-link dropdown-toggle" href = "#" id = "lesson_drop_list" data-toggle = "dropdown">
+              Lessons
+            </a>
+  
+            <div class = "dropdown-menu" ariallabelledby = "lesson_drop_list">
+              <a class = "dropdown-item" href = "pronoun.html"> Pronouns </a> <!--pronoun-->
               <div class = "dropdown-divider"></div>
-
-              <a class = "dropdown-item" href = "subjectVerb.html"> Lesson 2 - Subject-Verb Agreement </a>
+  
+              <a class = "dropdown-item" href = "subjectVerb.html">Subject-Verb agreement </a>
               <div class = "dropdown-divider"></div>
-			  
-			  <a class = "dropdown-item" href = "verbTense.html"> Lesson 3 - Verb Tense </a>
-              <div class = "dropdown-divider"></div>
-              </div> <!--drop down menu -->
+  
+              <a class = "dropdown-item" href = "verbTense.html"> Verb Tense </a>
+              
 
-            </li><!--end dropdown list Lessons -->
-
-            <!-- Drop down menu for the Quizzes -->
-            <li class = "nav-item dropdown">
-              <a class = "nav-link dropdown-toggle" href = "#" id = "quiz_drop_list" data-toggle = "dropdown">
-                Quizzes
-              </a>
-
-              <div class = "dropdown-menu" ariallabelledby = "quiz_drop_list">
-                 <a class = "dropdown-item" href ="pronounQuiz.html"> Quiz 1 - Pronouns </a>
-                 <div class = "dropdown-divider"></div>
-
-                 <a class = "dropdown-item" href ="subjectVerbQuiz.html"> Quiz 2 - Subject-Verb Agreement</a>
-                 <div class = "dropdown-divider"></div>
-
-                 <a class = "dropdown-item" href ="verbTenseQuiz.html"> Quiz 3 - Verb Tense </a>
-                 <div class = "dropdown-divider"></div>
-              </div><!--drop down menu -->
-            </li> <!--end dropdown list Quizzes -->
-
-            <li class = "nav-item">
-              <a class = "nav-link" href = "about.html"> About us </a>
-            </li>
-          </ul> <!-- end navigation items -->
-
-        </nav> <!--navbar-->
+            </div> <!--drop down menu -->
+  
+          </li><!--end dropdown list Lessons -->
+  
+          <!-- Drop down menu for the Quizzes -->
+          <li class = "nav-item dropdown">
+            <a class = "nav-link dropdown-toggle" href = "#" id = "quiz_drop_list" data-toggle = "dropdown">
+              Quizzes
+            </a>
+  
+            <div class = "dropdown-menu" ariallabelledby = "quiz_drop_list">
+               <a class = "dropdown-item" href ="pronounQuiz.html"> Pronoun </a>
+               <div class = "dropdown-divider"></div>
+  
+               <a class = "dropdown-item" href ="subjectVerbQuiz.html"> Subject-Verb </a>
+               <div class = "dropdown-divider"></div>
+  
+               <a class = "dropdown-item" href ="verbTenseQuiz.html"> Verb-Tenses </a>
+               <div class = "dropdown-divider"></div>
+            </div><!--drop down menu -->
+          </li> <!--end dropdown list Quizzes -->
+  
+          <li class = "nav-item">
+            <a class = "nav-link" href = "about.html"> About us </a>
+          </li>
+  
+        </ul> <!-- end navigation items -->
+  
+      </nav> <!--navbar-->
         
 
         <div id = "root"> </div>
@@ -92,7 +94,7 @@ class Title extends React.Component
 
 }//end title
 
-class Controller extends React.Component 
+class Question extends React.Component 
 {
     //constructor to initialise state
     constructor(props)
@@ -103,224 +105,153 @@ class Controller extends React.Component
             this.state = {
                 
                 checked: false,
-               // checked2: false,
-                //checked3: false,
-                message1: " ",
-                message2: " ",
-                message3: " ",
-                message4: " ",
-                message5: " ",
-                message6: " ",
-                userChoice: " "        
+                message: " ",
+                userChoice: " ",
+                solution :this.props.solution        
             }
 
             //bind event handler functions
-            this.handleOnChange1 = this.handleOnChange1.bind(this);
-            this.handleOnChange2 = this.handleOnChange2.bind(this);
-            this.handleOnChange3 = this.handleOnChange3.bind(this);
-            this.handleOnChange4 = this.handleOnChange4.bind(this);
-            this.handleOnChange5 = this.handleOnChange5.bind(this);
-            this.handleOnChange6 = this.handleOnChange6.bind(this);
-			this.handleReset = this.handleReset.bind(this);
-            this.handleSubmit1 = this.handleSubmit1.bind(this);
-            this.handleSubmit2 = this.handleSubmit2.bind(this);
-            this.handleSubmit3 = this.handleSubmit3.bind(this);
-            this.handleSubmit4 = this.handleSubmit4.bind(this);
-            this.handleSubmit5 = this.handleSubmit5.bind(this);
-            this.handleSubmit6 = this.handleSubmit6.bind(this);
+            this.handleOnChange = this.handleOnChange.bind(this);
+            this.handleSubmit = this.handleSubmit.bind(this);
+         
         }//constructor
+   
+       
 
-            //handleSubmits
-            handleSubmit1(event)
+         //handleSubmits
+         handleSubmit(event)
         {
             //prevent default action on form
             event.preventDefault();
            
+            
+            //convert input to lowercase
+            var userChoice = this.state.userChoice;
+            userChoice = userChoice.toLowerCase();
+            userChoice = userChoice.replace(/\s/g, "");
+
             //validate submission
-            if(this.state.userChoice == "was ice skating")
+            if(userChoice == this.state.solution)
             {
-                this.setState({message1: "Correct Choice"});
+                this.setState({message: "Correct Choice"});
             }
             else
             {
-                this.setState({message1: "Incorrect Choice"});
+                this.setState({message: "Incorrect Choice"});
             }//if-else*/
 			
-		}//handleSubmit1
-
-        handleSubmit2(event)
-        {
-            //prevent default action on form
-            event.preventDefault();
-            //validate submission
-            if(this.state.userChoice == "has been teaching")
-            {
-                this.setState({message2: "Correct Choice"});
-            }
-            else
-            {
-                this.setState({message2: "Incorrect Choice"});
-            }//if-else*/
-			
-		}//handleSubmit2
-
-         handleSubmit3(event)
-        {
-            //prevent default action on form
-            event.preventDefault();
-            //validate submission
-            if(this.state.userChoice == "went")
-            {
-                this.setState({message3: "Correct Choice"});
-            }
-            else
-            {
-                this.setState({message3: "Incorrect Choice"});
-            }//if-else*/
-			
-		}
-
-        handleSubmit4(event)
-        {
-            //prevent default action on form
-            event.preventDefault();
-            //validate submission
-            if(this.state.userChoice == "go")
-            {
-                this.setState({message4: "Correct Choice"});
-            }
-            else
-            {
-                this.setState({message4: "Incorrect Choice"});
-            }//if-else*/
-			
-		}//h
-
-        handleSubmit5(event)
-        {
-            //prevent default action on form
-            event.preventDefault();
-            //validate submission
-            if(this.state.userChoice == "cheered")
-            {
-                this.setState({message5: "Correct Choice"});
-            }
-            else
-            {
-                this.setState({message5: "Incorrect Choice"});
-            }//if-else*/
-			
-		}//h
-
-        handleSubmit6(event)
-        {
-            //prevent default action on form
-            event.preventDefault();
-            //validate submission
-            if(this.state.userChoice == "had already gone")
-            {
-                this.setState({message6: "Correct Choice"});
-            }
-            else
-            {
-                this.setState({message6: "Incorrect Choice"});
-            }//if-else*/
-			
-		}//h
-
-
+		}//handleSubmit
 
          /* HANDLE ON CHANGE FUNCTIONS */       
-          handleOnChange1(event)
+         handleOnChange(event)
         {
             //set the state of component
             this.setState({
               checked: !this.state.checked,
               userChoice: event.target.value
-            });                 
+            });
+
+                           
         }
 
-          handleOnChange2(event)
-        {
-            //set the state of component
-            this.setState({
-              checked: !this.state.checked,
-              userChoice: event.target.value
-            });                 
-        }
-
-          handleOnChange3(event)
-        {
-            //set the state of component
-            this.setState({
-              checked: !this.state.checked,
-              userChoice: event.target.value
-            });                 
-        }
-
-         handleOnChange4(event)
-        {
-            //set the state of component
-            this.setState({
-              checked: !this.state.checked,
-              userChoice: event.target.value
-            });                 
-        }
-
-        handleOnChange5(event)
-        {
-            //set the state of component
-            this.setState({
-              checked: !this.state.checked,
-              userChoice: event.target.value
-            });                 
-        }
-
-        handleOnChange6(event)
-        {
-            //set the state of component
-            this.setState({
-              checked: !this.state.checked,
-              userChoice: event.target.value
-            });                 
-        }
-
-
-        handleReset(event)
+         handleReset(event)
         {
             this.setState({
-            checked1: !this.state.checked1});
+            checked: !this.state.checked});
         }
 
-        render()
-        {
-            return(
-              <div>
-                <Title instruction = " For each sentence, fill in the blanks with the correct verb tense." />,
+    
 
-                <Question1 c = {this.state.checked} m = {this.state.message1} sub = {this.handleSubmit1} change = {this.handleOnChange1} t = {this.handleReset} 
-                    number = "1"
+    render()
+    {
+        return(
+
+            <div>
+                <div id = "FORM">
+                 
+                 <form className = "form-group" action = "#" method = "POST">
+                 
+                 <div className = "form group ">
+                 <label> {this.props.number}. {this.props.question} </label> <br/>
+                 </div>
+
+                 <div className = "form-group form-check">
+                 &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
+                 </div>
+
+                  <div className = "form-group form-check">
+                  &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
+                 </div>
+
+                 <div className = "form-group form-check">
+                  &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
+                 </div>
+
+                 <div className = "form-group form-check">
+                 &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
+                 </div>
+
+                 <div className = "form-group form-check">
+                 <input className = "form-control" type = "text" placeholder = "Enter answer here" onChange = {this.handleOnChange} />
+                 </div>
+
+                   <div className = "form-group form-check">
+                    <p><button className = "btn btn-info form-check-button "onClick = {this.handleSubmit}> {this.props.submit} </button>
+                       &nbsp; &nbsp; 
+                       
+                       <button className = "btn btn-danger form-check-button " onClick = {this.handleReset}> {this.props.reset} </button> </p>
+                    
+                   </div>
+                    
+                    <div className = "alert alert-success">
+                    
+                    <h2> {this.state.message} </h2>
+                    
+                    </div>
+             </form>
+ 
+             </div>
+          
+
+            </div>
+        );
+    }
+
+}//Question
+
+class App extends React.Component 
+{
+    render()
+    {
+        return(
+            <div>
+
+                      <Title instruction = " For each sentence, fill in the blanks with the correct verb tense." />
+                 <Question
+                 number = "1"
                     question = "Henry hurt his head while he _________."
                     choice1 ="a. had ice skated"
                     choice2 ="b. ice skated"
                     choice3 ="c. was ice skating"
                     choice4 ="d. ice skates"
-                    solution ="was ice skating"
+                    solution ="wasiceskating"
                     submit = "Submit"
                     reset = "Reset"
-               />,
-               <Question2 c = {this.state.checked} m = {this.state.message2} sub = {this.handleSubmit2} change = {this.handleOnChange2} t = {this.handleReset} 
+                />
+
+                <Question  
                 number = "2"
                 question = "Mrs. Browne __________ at St. Stephens High School since 1998."
                 choice1 = "a. will teach"
                 choice2= "b. teaches"
                 choice3 = "c. has been teaching"
                 choice4 = "d. is teaching"
-                solution = "has been teaching"
+                solution = "hasbeenteaching"
                 submit = "Submit"
                 reset = "Reset"
-               />,
-               <Question3 c = {this.state.checked} m = {this.state.message3} sub = {this.handleSubmit3} change = {this.handleOnChange3} t = {this.handleReset} 
+               />
+
+               <Question  
                 number = "3"
                 question = "The last time my parents _________ to California, they stayed there for three weeks."
                 choice1 = "a. went"
@@ -330,8 +261,9 @@ class Controller extends React.Component
                 solution = "went"
                 submit = "Submit"
                 reset = "Reset"
-                />,
-                <Question4 c = {this.state.checked} m = {this.state.message4} sub = {this.handleSubmit4} change = {this.handleOnChange4} t = {this.handleReset} 
+                />
+
+                <Question
                 number = "4"
                 question = " My Parents ________ to California two times every year."
                 choice1 = "a. goes"
@@ -341,8 +273,9 @@ class Controller extends React.Component
                 solution = "go"
                 submit = "Submit"
                 reset = "Reset"
-                />,
-                <Question5 c = {this.state.checked} m = {this.state.message5} sub = {this.handleSubmit5} change = {this.handleOnChange5} t = {this.handleReset} 
+                />
+
+                <Question  
                 number = "5"
                 question = "The Lakers’ fans ________ when their point guard stole the ball from the Raptors and scored."
                 choice1 = "a. cheered"
@@ -352,8 +285,9 @@ class Controller extends React.Component
                 solution = "cheered"
                 submit = "Submit"
                 reset = "Reset"
-                />,
-                <Question6 c = {this.state.checked} m = {this.state.message6} sub = {this.handleSubmit6} change = {this.handleOnChange6} t = {this.handleReset} 
+                />
+
+                <Question  
                 number = "6"
                 question = "Before Shane arrive, Jane ______ home."
                 choice1 = "a. has already gone"
@@ -364,325 +298,17 @@ class Controller extends React.Component
                 submit = "Submit"
                 reset = "Reset"
                 />
-              </div>
-            );
-        }//render
-
-}//controller
-
-
-class Question1 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-
-                <div id = "FORM">
-                 
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "   defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>
-            </form>
-
             </div>
-            </div>
-           
-           
-           );
-    }
-}
 
-class Question2 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-                <div id = "FORM">
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>                   
-            </form>
-            </div>
-            </div>
-           
-           
-           );
-    }
-}
 
-class Question3 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-                <div id = "FORM">
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>                   
-            </form>
-            </div>
-            </div>
-           
-           
-           );
+
+        );
     }
 }
 
 
-class Question4 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-                <div id = "FORM">
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>                   
-            </form>
-            </div>
-            </div>
-           
-           
-           );
-    }
-}
 
-class Question5 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-                <div id = "FORM">
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} /><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = " "  defaultChecked= {this.props.c} onChange = {this.props.change}/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>                   
-            </form>
-            </div>
-            </div>
-           
-           
-           );
-    }
-}
-
-class Question6 extends React.Component 
-{ 
-    render()
-    { 
-        return(
-           
-            <div>
-                <div id = "FORM">
-                <form className = "form-group" action = "#" method = "POST">
-				
-                <div className = "form group ">
-                <label> {this.props.number}. {this.props.question} </label> <br/>
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice1} </label>
-                &nbsp;<input className = "btn form-check-button" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                 <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label" >{this.props.choice2}  </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " " defaultChecked = {this.props.c} onChange = {this.props.change}/><br/>
-                </div>
-                <div className = "form-group form-check">
-                 &nbsp;<label className = "form-check-label">{this.props.choice3} </label> 
-                 &nbsp;<input className = "btn"type = "radio" name = "question1"  value = {this.props.solution} defaultChecked = {this.props.c} onChange = {this.props.change} />
-                </div>
-                <div className = "form-group form-check">
-                &nbsp;<label className = "form-check-label">{this.props.choice4} </label>
-                 &nbsp;<input className = "btn" type = "radio" name = "question1" value = " "    defaultChecked = {this.props.c} onChange = {this.props.change}/>
-                </div>
-                  <div className = "form-group form-check">
-                
-                   <p><button className = "btn btn-info form-check-button "onClick = {this.props.sub}> {this.props.submit} </button>
-                      &nbsp; &nbsp; 
-                      
-                      <button className = "btn btn-danger form-check-button " onClick = {this.props.t}> {this.props.reset} </button> </p>
-                   
-                  </div>
-                   <div className = "alert alert-success">
-                   
-                   <h2> {this.props.m} </h2>
-                   
-                   </div>                   
-            </form>
-            </div>
-            </div>
-           
-           
-           );
-    }
-}
-
-ReactDOM.render(<Controller />, document.getElementById("root"));
+ReactDOM.render( <App />, document.getElementById("root"));
 
 
 </script>
