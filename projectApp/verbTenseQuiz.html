@@ -11,7 +11,7 @@
      <script src = "reactFiles/babel.js"> </script>
   </head>
 
-  <body >
+  <body id = "parent" >
          <!-- Navigation bar -->
      <nav class = "navbar navbar-expand-md bg-danger navbar-dark">
 
@@ -103,9 +103,7 @@ class Question extends React.Component
 
             //setting initial state of components
             this.state = {
-                
-                checked: false,
-                message: " ",
+                message: "Ready to try your luck ? Then select an answer and submit",
                 userChoice: " ",
                 solution :this.props.solution        
             }
@@ -147,7 +145,6 @@ class Question extends React.Component
         {
             //set the state of component
             this.setState({
-              checked: !this.state.checked,
               userChoice: event.target.value
             });
 
@@ -157,7 +154,7 @@ class Question extends React.Component
          handleReset(event)
         {
             this.setState({
-            checked: !this.state.checked});
+            userChoice: " "});
         }
 
     
@@ -192,7 +189,7 @@ class Question extends React.Component
                  </div>
 
                  <div className = "form-group form-check">
-                 <input className = "form-control" type = "text" placeholder = "Enter answer here" onChange = {this.handleOnChange} />
+                 <input className = "form-control" type = "text" placeholder = "Enter letter of answer" onChange = {this.handleOnChange} />
                  </div>
 
                    <div className = "form-group form-check">
@@ -205,7 +202,7 @@ class Question extends React.Component
                     
                     <div className = "alert alert-success">
                     
-                    <h2> {this.state.message} </h2>
+                    <h6> {this.state.message} </h6>
                     
                     </div>
              </form>
@@ -234,7 +231,7 @@ class App extends React.Component
                     choice2 ="b. ice skated"
                     choice3 ="c. was ice skating"
                     choice4 ="d. ice skates"
-                    solution ="wasiceskating"
+                    solution ="c"
                     submit = "Submit"
                     reset = "Reset"
                 />
@@ -246,7 +243,7 @@ class App extends React.Component
                 choice2= "b. teaches"
                 choice3 = "c. has been teaching"
                 choice4 = "d. is teaching"
-                solution = "hasbeenteaching"
+                solution = "c"
                 submit = "Submit"
                 reset = "Reset"
                />
@@ -258,7 +255,7 @@ class App extends React.Component
                 choice2= "b. have gone"
                 choice3 = "c. was going"
                 choice4 = "d. go"
-                solution = "went"
+                solution = "a"
                 submit = "Submit"
                 reset = "Reset"
                 />
@@ -270,7 +267,7 @@ class App extends React.Component
                 choice2= "b. go"
                 choice3 = "c. has been"
                 choice4 = "d. went"
-                solution = "go"
+                solution = "b"
                 submit = "Submit"
                 reset = "Reset"
                 />
@@ -282,19 +279,19 @@ class App extends React.Component
                 choice2= "b. cheer"
                 choice3 = "c. will cheer"
                 choice4 = "d. have cheered"
-                solution = "cheered"
+                solution = "a"
                 submit = "Submit"
                 reset = "Reset"
                 />
 
                 <Question  
                 number = "6"
-                question = "Before Shane arrive, Jane ______ home."
+                question = "Before Shane arrived, Jane ______ home."
                 choice1 = "a. has already gone"
-                choice2= "b. went"
+                choice2= "b. have"
                 choice3 = "c. had already gone"
                 choice4 = "d. is already going"
-                solution = "had already gone"
+                solution = "c"
                 submit = "Submit"
                 reset = "Reset"
                 />

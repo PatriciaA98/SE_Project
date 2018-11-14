@@ -11,7 +11,7 @@
      <script src = "reactFiles/babel.js"> </script>
   </head>
 
-  <body >
+  <body id = "parent" >
          <!-- Navigation bar -->
      <nav class = "navbar navbar-expand-md bg-danger navbar-dark">
 
@@ -106,12 +106,12 @@ class Controller extends React.Component
                 checked: false,
                // checked2: false,
                 //checked3: false,
-                message1: " ",
-                message2: " ",
-                message3: " ",
-                message4: " ",
-                message5: " ",
-                message6: " ",
+                message1: "Ready to try your luck ? Then select an answer and submit ",
+                message2: "Ready to try your luck ? Then select an answer and submit ",
+                message3: "Ready to try your luck ? Then select an answer and submit ",
+                message4: "Ready to try your luck ? Then select an answer and submit ",
+                message5: "Ready to try your luck ? Then select an answer and submit ",
+                message6: "Ready to try your luck ? Then select an answer and submit ",
                 userChoice: " "        
             }
 
@@ -361,7 +361,7 @@ class Controller extends React.Component
                 choice2= "b. him"
                 choice3 = "c. they"
                 choice4 = "d. you"
-                solution = "a. he"
+                solution = "he"
                 submit = "Submit"
                 reset = "Reset"
                 />
@@ -413,7 +413,7 @@ class Question1 extends React.Component
                    
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>
             </form>
@@ -465,7 +465,7 @@ class Question2 extends React.Component
                   </div>
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>                   
             </form>
@@ -516,7 +516,7 @@ class Question3 extends React.Component
                   </div>
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>                   
             </form>
@@ -568,7 +568,7 @@ class Question4 extends React.Component
                   </div>
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>                   
             </form>
@@ -619,7 +619,7 @@ class Question5 extends React.Component
                   </div>
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>                   
             </form>
@@ -670,7 +670,7 @@ class Question6 extends React.Component
                   </div>
                    <div className = "alert alert-success">
                    
-                   <h2> {this.props.m} </h2>
+                   <h6> {this.props.m} </h6>
                    
                    </div>                   
             </form>
